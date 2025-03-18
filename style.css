@@ -1,0 +1,177 @@
+section{
+    min-height: 100vh;
+    position: relative;
+    width: 100;
+    background: #121321;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f3f5f5;
+    perspective: 1000px;
+}
+section::before{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(-150px, -120px);
+    background: linear-gradient(90deg,#9c27bc,#f3f5f5);
+}
+section::After{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(150px, 120px);
+    background: linear-gradient(90deg,#9c27bc,#f3f5f5);
+} 
+.container{
+    position: relative;
+    height: 220px;
+    width: 330px;
+    z-index: 100;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* General Page Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f0f0f, #222222);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Card Container */
+.card-container {
+    width: 370px;
+    height: 240px;
+    perspective: 1200px;
+}
+
+/* Flipping Card Effect */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Styling */
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Front Side */
+.card-front {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+/* Bank Name */
+.bank-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Chip */
+.chip {
+    width: 45px;
+    height: 35px;
+    background: gold;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Card Number */
+.card-number {
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    font-family: monospace;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Hologram Effect */
+.hologram {
+    width: 60px;
+    height: 40px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.4));
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    animation: hologram-glow 2s infinite alternate;
+}
+
+@keyframes hologram-glow {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* Expiry Date & Cardholder */
+.cardholder-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.expiry-date {
+    font-size: 0.9rem;
+}
+
+/* Mastercard Logo */
+.mastercard-logo img {
+    width: 50px;
+    transition: transform 0.3s;
+}
+
+.mastercard-logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Back Side */
+.card-back {
+    background: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Black Strip */
+.black-strip {
+    width: 100%;
+    height: 40px;
+    background: black;
+}
+
+/* CVV Box */
+.cvv-box {
+    width: 80%;
+    background: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}
